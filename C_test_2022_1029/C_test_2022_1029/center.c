@@ -144,3 +144,14 @@
 //	is_prime_number(num);
 //	return 0;
 //}
+//int Max(int a, int b)
+//{
+//	return a > b ? a : b;
+//}
+//int main()
+//{
+//	int a = 43;
+//	int b = 20;
+//	int c = 100;
+//	printf("%d", Max(a, Max(b, c)));
+//}
