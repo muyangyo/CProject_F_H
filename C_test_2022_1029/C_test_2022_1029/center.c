@@ -155,3 +155,76 @@
 //	int c = 100;
 //	printf("%d", Max(a, Max(b, c)));
 //}
+//int Fun(int n)
+//{
+//	if (n == 5)
+//		return 2;
+//	else
+//		return 2 * Fun(n + 1);
+//}
+//int main()
+//{
+//	int ret = Fun(2);
+//	printf("%d\n", ret);
+//	return 0;
+//}
+//递归实现n的k次方
+//int nj(int x)
+//{
+//	if (x == 1)
+//		return 1;
+//	else
+//		return (x* (nj(x - 1)));
+//}
+//int main()
+//{
+//	int a = 5;
+//	int ret = nj(a);
+//	printf("%d\n",ret);
+//	return 0;
+//}
+//计算一个数的每位之和（递归实现）
+//int sum(int x)
+//{
+//	if (x < 10)
+//		return x;
+//	else
+//		return (x % 10 + (sum(x / 10)));
+//}
+//int main()
+//{
+//	int ret = sum(1729);
+//	printf("%d\n", ret);
+//	return 0;
+//}
+//strlen的模拟（递归实现）
+//int my_strlen(char* parr)
+//{
+//	if (*parr == '\0')
+//		return 0;
+//	else
+//	{
+//		return(1 + (my_strlen(parr + 1)));
+//	}
+//}
+//int main()
+//{
+//	char arr[] = "abcde";
+//	int ret = my_strlen(arr);
+//	printf("%d\n", ret);
+//}
+//void everynumberprint(int x)
+//{
+//	if (x < 10)
+//		printf("%d ",x);
+//	else
+//	{
+//		everynumberprint(x / 10);
+//		printf("%d ", x % 10);
+//	}
+//}
+//int main()
+//{
+//	everynumberprint(12345678);
+//	return 0;
+//}
