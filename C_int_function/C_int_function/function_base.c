@@ -12,6 +12,30 @@ void int_print(int* parr, int size)
 	printf("\n");
 }
 
+// 初始化 整形数组 为全0
+void intarr_init(int* parr, int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		*(parr + i) = 0;
+	}
+}
+
+//整形数组 的逆置
+void int_reverse(int* parr, int size)
+{
+	int z = 0;
+	int y = size - 1;
+	while (z <= y)
+	{
+		int temp = parr[z];
+		parr[z] = parr[y];
+		parr[y] = temp;
+		z++;
+		y--;
+	}
+}
+
 //删除有序数组中的重复项
 int remove_commondate(int* parr, int size)
 {
