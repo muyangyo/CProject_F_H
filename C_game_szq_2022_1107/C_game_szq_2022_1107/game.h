@@ -3,8 +3,8 @@
 #include <stdlib.h>
 #include <Windows.h>
 #include <time.h>
-#define H 3
-#define L 3
+#define H 5
+#define L 5
 
 //√¿ªØ
 void my_sys();
