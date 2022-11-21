@@ -1,4 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
 //×ª»»½øÖÆ
 //#include<stdio.h>
 //void print(int x)
@@ -43,3 +44,31 @@
 //    }
 //    return 0;
 //}
+int main()
+{
+	int n = 0;
+	scanf("%d", &n);
+	int arr[20] = { 0 };
+	int i = 19;
+	while (n)
+	{
+		if (n > 1)
+		{
+			arr[i] = n / 2;
+			n = n % 2;
+			i--;
+		}
+		else
+		{
+			arr[i] = n;
+			i--;
+			n = 0;
+		}
+
+	}
+	for (int j = i; j < 20; j++)
+	{
+		printf("%d", arr[j]);
+	}
+	return 0;
+}
