@@ -1,5 +1,4 @@
 #define _CRT_SECURE_NO_WARNINGS 1
-#include <stdio.h>
 //int main()
 //{
 //	int changeccount = 0;
@@ -113,4 +112,40 @@
 //	int size = sizeof(arr) / sizeof(arr[0]);
 //	jxoh(arr, size);
 //	intarr_print(arr, size);
+//}
+//#include <stdio.h>
+//
+//
+//int main() {
+//    int n = 0;
+//    scanf("%d", &n);
+//    int arr[10] = { 1,1,1 };
+//    int flag1 = 1;
+//    for (int i = 0; i < n - 1; i++)
+//    {
+//        if (arr[i] > arr[i + 1])
+//        {
+//            flag1 = 0;
+//            break;
+//        }
+//    }
+//    int flag2 = 1;
+//    for (int i = 0; i < n - 1; i++)
+//    {
+//        if (arr[i] < arr[i + 1])
+//        {
+//            flag2 = 0;
+//            break;
+//        }
+//    }
+//    if (flag1 == 1 || flag2 == 1)
+//    {
+//        printf("sorted\n");
+//    }
+//    else
+//    {
+//        printf("unsorted\n");
+//
+//    }
+//    return 0;
 //}
