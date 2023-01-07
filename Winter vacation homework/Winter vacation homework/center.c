@@ -237,9 +237,11 @@ void Young_matrix(int x,int(*p)[3],int h,int l)
 	 }
 	printf("can't find the elem!\n");
 }
-//int main()
-//{
-//	int arr[3][3] = { 1,2,3,4,5,6,7,8,9 };
-//	Young_matrix(9,arr,3,3);
-//	return 0;
-//}
+int main()
+{
+	int arr[][3] = { {1, 3, 5},
+				  {3, 5, 7},
+				  {5, 7, 9} };
+	Young_matrix(3,arr,3,3);
+	return 0;
+}
