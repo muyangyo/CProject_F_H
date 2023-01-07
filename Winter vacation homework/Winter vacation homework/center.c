@@ -215,33 +215,39 @@
 //}
 //定义一个函数指针，指向的函数有两个int形参并且返回一个函数指针，返回的指针指向一个有一个int形参且返回int的函数
 //int (*((*p)(int, int)))(int)
-void Young_matrix(int x,int(*p)[3],int h,int l)
-{
-	int h_pos = h-1;
-	int l_pos = l-1;
-	while (h_pos >= 0 && l_pos >= 0)
-	{
-		if (p[h_pos][0]>x)
-		{
-			h_pos--;
-		}
-		else if(p[h_pos][l_pos]==x)
-		{
-			printf("got it, subscript it as:%d %d\n", h_pos, l_pos);//中文打印出现乱码,只能用英文了
-			return;
-		}
-		else
-		{
-			l_pos--;
-		}
-	 }
-	printf("can't find the elem!\n");
-}
-int main()
-{
-	int arr[][3] = { {1, 3, 5},
-				  {3, 5, 7},
-				  {5, 7, 9} };
-	Young_matrix(3,arr,3,3);
-	return 0;
-}
+//void Young_matrix(int x,int(*p)[4],int h,int l)
+//{
+//	int h_pos = h-1;
+//	int l_pos = 0;
+//	while (h_pos >= 0)
+//	{
+//		if (p[h_pos][0]>x)
+//		{
+//			h_pos--;
+//		}
+//		else if(p[h_pos][l_pos]==x)
+//		{
+//			printf("找到了,下标为:%d %d\n", h_pos, l_pos);
+//			return;
+//		}
+//		else
+//		{
+//			l_pos++;
+//			if (l_pos == l)
+//			{
+//				l_pos = 0;
+//				h_pos--;
+//			}
+//		}
+//	 }
+//	printf("找不到该元素!\n");
+//}
+//int main()
+//{
+//	int arr[2][4] = { 
+//					{1,2,8,9},
+//					{4,7,10,13},
+//				   };
+//	Young_matrix(7,arr,2,4);
+//	return 0;
+//}
