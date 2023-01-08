@@ -122,3 +122,92 @@
 //	//44的二进制  由于第一位是0,故%d打印就是44
 //	return 0;
 //}
+#include <stdlib.h>
+typedef struct stu
+{
+	int id;
+	char name[10];
+}Stu;
+int cmp_float(const void* p1, const void* p2)
+{
+	float exp1 = *((float*)p1);
+	float exp2 = *((float*)p2);
+	if (exp1 > exp2)
+		return 1;
+	else if (exp1 == exp2)
+		return 0;
+	else
+		return -1;
+}
+int cmp_Stu(const void* p1, const void* p2)
+{
+	int exp1 = ((Stu*)p1)->id;
+	int exp2 = ((Stu*)p2)->id;
+	if (exp1 > exp2)
+		return 1;
+	else if (exp1 == exp2)
+		return 0;
+	else
+		return -1;
+}
+void swap(void* p1, void* p2, size_t elem_width)
+{
+	for (size_t i = 0; i < elem_width; i++)
+	{
+		char temp = *(char*)p1;
+		*(char*)p1 = *(char*)p2;
+		*(char*)p2 = temp;
+		((char*)p1)++;
+		((char*)p2)++;
+	}
+}
+//qsort(arr, sz, size_elem, cmp_float);
+void MyQsort(void* parr, size_t num, size_t elem_width, int(*cmp)(const void*, const void*))
+{
+	for (size_t i = 0; i < num - 1; i++)
+	{
+		for (size_t j = 0; j < num - 1 - i; j++)
+		{
+			if (cmp((char*)parr + (j * elem_width), (char*)parr + ((j + 1) * elem_width)) == 1)
+			{
+				swap((char*)parr + (j * elem_width), (char*)parr + ((j + 1) * elem_width),elem_width);
+			}
+		}
+	}
+}
+void printf_float(float* parr, size_t size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		printf("%f ", parr[i]);
+	}
+	printf("\n");
+}
+void printf_Stu(Stu* parr,size_t size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		printf("%d %s\n", parr[i].id,parr[i].name);
+	}
+	printf("--------------------------------------------\n");
+}
+
+int main()
+{
+	//float_qsort
+	float arr[] = { 1.2,1.3,1.1 };
+	size_t sz = sizeof(arr) / sizeof(arr[0]);
+	size_t size_elem = sizeof(arr[0]);
+	printf_float(arr, sz);
+	MyQsort(arr, sz, size_elem,cmp_float);
+	printf_float(arr, sz);
+
+	//Stu_qsort
+	/*Stu arr1[] = { {3,"小李"},{1,"小白"},{2,"小圆"} };
+	size_t sz1 = sizeof(arr1) / sizeof(arr1[0]);
+	size_t size_elem1 = sizeof(arr1[0]);
+	printf_Stu(arr1, sz);
+	qsort(arr1, sz1, size_elem1, cmp_Stu);
+	printf_Stu(arr1, sz);
+	return 0;*/
+}
